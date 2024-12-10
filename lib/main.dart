@@ -1,6 +1,8 @@
 import 'package:cast/cast.dart';
 import 'package:flutter/material.dart';
 
+import 'webtrc_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -17,11 +19,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Cast Screen"),
-          actions: [
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search))
-          ],
         ),
-        body: MyHomePage(),
+        body: ScreenSharingApp(),
       ),
     );
   }
@@ -75,8 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
             return ListTile(
               title: Text(device.name),
               onTap: () {
-                 _connectToYourApp(context, device);
-               // _connectAndPlayMedia(context, device);
+                _connectToYourApp(context, device);
+                // _connectAndPlayMedia(context, device);
               },
             );
           }).toList(),
